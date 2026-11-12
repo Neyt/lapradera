@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barrio La Pradera · Quito</title>
+<meta name="description" content="La casa en línea de los vecinos de La Pradera, en Iñaquito, Quito: avisos del barrio, qué hacer ante un problema, la seguridad que pagamos entre todos y cómo participar.">
+<meta property="og:title" content="Somos La Pradera">
+<meta property="og:description" content="Vecinos, negocios y Directiva de un barrio de Iñaquito que se organiza. Avisos, guía de problemas y cómo sumarte.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2F6B45">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6B45'/%3E%3Cpath d='M4 24 L12 12 L16 16 L20 9 L28 24Z' fill='%23DCEBF5'/%3E%3Cpath d='M4 25h24' stroke='%23F2C14E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pradera:#2F6B45;     /* verde del nombre del barrio */
+  --pradera-hondo:#1F4A30;
+  --pasto:#CFE5CF;
+  --cielo:#DCEBF5;       /* cielo de Quito en la mañana */
+  --volcan:#4A5D7A;      /* el Pichincha al fondo */
+  --sol:#F2C14E;
+  --papel:#F6F8F3;
+  --blanco:#FFFFFF;
+  --tinta:#1B2430;
+  --gris:#56616E;
+  --linea:#D9DFD6;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --texto:"Atkinson Hyperlegible",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 1.0625rem/1.62 var(--texto)}
+svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1140px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.06;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:700;line-height:1.2}
+p{margin:0 0 1em}
+.num{font-family:var(--display);font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.75rem 1.3rem;border-radius:999px;font:700 1rem/1 var(--texto);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s}
+.btn-verde{background:var(--pradera);color:#fff}
+.btn-verde:hover{background:var(--pradera-hondo)}
+.btn-sol{background:var(--sol);color:var(--tinta)}
+.btn-sol:hover{background:#F7D27A}
+.btn-borde{border-color:var(--tinta);color:var(--tinta);background:transparent}
+.btn-borde:hover{background:rgba(27,36,48,.06)}
+section{padding:5.5rem 0}
+.cabeza{max-width:60ch;margin-bottom:2.75rem}
+.cabeza p{color:var(--gris);font-size:1.12rem;margin:1rem 0 0}
+
+/* ---------- barra ---------- */
+.barra{position:sticky;top:0;z-index:30;background:rgba(246,248,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.barra .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:800 1.2rem var(--display)}
+.marca svg{width:32px;height:32px}
+.barra nav{display:flex;gap:1.5rem;font-size:.97rem}
+.barra nav a{text-decoration:none;color:var(--gris)}
+.barra nav a:hover{color:var(--tinta);text-decoration:underline;text-underline-offset:5px}
+.barra .btn{min-height:42px;padding:.5rem 1.05rem;font-size:.95rem}
+@media (max-width:900px){.barra nav{display:none}}
+
+/* ---------- hero: el barrio con el Pichincha detrás ---------- */
+.hero{padding:4rem 0 0;background:linear-gradient(var(--papel),var(--cielo) 70%)}
+.hero-texto{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:end}
+.hero h1{font-size:clamp(3.2rem,9vw,7.2rem);font-weight:800;line-height:.92;letter-spacing:-.035em;color:var(--pradera-hondo)}
+.hero .lead{font-size:1.2rem;color:#2E3946;max-width:44ch;margin:0}
+.hero .acciones{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.escena-caja{position:relative;margin-top:2.5rem}
+.escena{border-radius:22px 22px 0 0}
+.escena{width:100%;height:auto;--cielo-e:#DCEBF5;--sol-e:#F2C14E;--monte:#9DB0C8;--monte2:#7F95B3;--edif1:#E9E4DA;--edif2:#D6DCE3;--edif3:#C9D6CC;--vent:#9FB3C8;--copa:#4F8A5B;--copa2:#3E7A4F;--calle:#5E6670;--franja:#F6F8F3;--cam:0}
+.escena *{transition:fill .9s ease, opacity .9s ease}
+.escena.noche{--cielo-e:#14233B;--sol-e:#E8EDF5;--monte:#22355A;--monte2:#1B2C4C;--edif1:#2A3A57;--edif2:#243450;--edif3:#22344A;--vent:#F2C14E;--copa:#1F3B2E;--copa2:#183226;--calle:#2A313B;--franja:#4A5566;--cam:1}
+.e-cielo{fill:var(--cielo-e)}
+.e-sol{fill:var(--sol-e)}
+.e-monte{fill:var(--monte)}
+.e-monte2{fill:var(--monte2)}
+.e-edif1{fill:var(--edif1)} .e-edif2{fill:var(--edif2)} .e-edif3{fill:var(--edif3)}
+.e-vent{fill:var(--vent)}
+.e-copa{fill:var(--copa)} .e-copa2{fill:var(--copa2)}
+.e-tronco{fill:#6B5A45}
+.e-calle{fill:var(--calle)}
+.e-franja{fill:var(--franja)}
+.e-poste{fill:#7A8594}
+.e-cam{fill:#F2C14E;opacity:var(--cam)}
+.e-haz{fill:#F2C14E;opacity:calc(var(--cam) * .16)}
+.e-moto{fill:#fff;opacity:var(--cam)}
+.e-estrella{fill:#fff;opacity:calc(var(--cam) * .8)}
+.interruptor{position:absolute;right:1rem;top:1rem;display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.92);border:1px solid var(--linea);border-radius:999px;padding:.4rem .5rem .4rem 1rem;font-weight:700;font-size:.95rem;cursor:pointer;color:var(--tinta)}
+.interruptor span.pista{width:46px;height:26px;border-radius:999px;background:#C8D2DC;position:relative;transition:background .3s}
+.interruptor span.pista::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .3s}
+.interruptor[aria-pressed="true"] span.pista{background:var(--pradera)}
+.interruptor[aria-pressed="true"] span.pista::after{transform:translateX(20px)}
+.escena-nota{position:absolute;left:1rem;bottom:1rem;max-width:34ch;background:rgba(20,35,59,.88);color:#E9EEF5;padding:.75rem 1rem;border-radius:12px;font-size:.92rem;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;pointer-events:none}
+.noche-activa .escena-nota{opacity:1;transform:none}
+@media (max-width:860px){.hero-texto{grid-template-columns:1fr;gap:1.25rem}.interruptor{top:auto;bottom:.75rem;right:.75rem;font-size:.85rem}.escena-nota{display:none}}
+
+/* ---------- franja de datos del barrio ---------- */
+.datos{background:var(--pradera-hondo);color:#E6F0E8}
+.datos .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:1.75rem 0}
+.datos b{display:block;font:800 1.9rem var(--display);color:#fff}
+.datos span{font-size:.95rem;color:#BFD6C5}
+@media (max-width:760px){.datos .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- cartelera ---------- */
+.cartelera{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.aviso{background:var(--blanco);border-radius:6px;padding:1.4rem 1.3rem 1.3rem;box-shadow:0 1px 0 var(--linea),0 10px 24px -18px rgba(27,36,48,.35);position:relative;display:flex;flex-direction:column}
+.aviso::before{content:"";position:absolute;top:-9px;left:50%;width:64px;height:18px;margin-left:-32px;background:rgba(242,193,78,.75);border-radius:2px;transform:rotate(-2deg)}
+.aviso:nth-child(2)::before{background:rgba(207,229,207,.95);transform:rotate(1.5deg)}
+.aviso:nth-child(3)::before{background:rgba(220,235,245,.95);transform:rotate(-1deg)}
+.aviso:nth-child(4)::before{background:rgba(242,193,78,.6);transform:rotate(2deg)}
+.aviso .cuando{font-weight:700;color:var(--pradera);font-size:.95rem;margin-bottom:.4rem}
+.aviso h3{margin-bottom:.5rem}
+.aviso p{color:var(--gris);font-size:.98rem;margin-bottom:.9rem}
+.aviso a{margin-top:auto;font-weight:700;color:var(--pradera-hondo)}
+@media (max-width:980px){.cartelera{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
+@media (max-width:560px){.cartelera{grid-template-columns:1fr}}
+
+/* ---------- el barrio (lugares) ---------- */
+.barrio{background:var(--blanco)}
+.barrio-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.calles{list-style:none;padding:0;margin:0;border-top:1px solid var(--linea)}
+.calles li{display:grid;grid-template-columns:12rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--linea)}
+.calles b{font:700 1.08rem var(--display)}
+.calles span{color:var(--gris)}
+.tipos{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.25rem 0 1.75rem;padding:0;list-style:none}
+.tipos li{background:var(--pasto);color:var(--pradera-hondo);font-weight:700;padding:.45rem .9rem;border-radius:999px;font-size:.95rem}
+@media (max-width:860px){.barrio-grid{grid-template-columns:1fr}.calles li{grid-template-columns:1fr;gap:.15rem}}
+
+/* ---------- logros (secuencia real en el tiempo) ---------- */
+.linea{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative}
+.linea::before{content:"";position:absolute;left:0;right:0;top:9px;height:3px;background:var(--pasto)}
+.linea li{position:relative;padding-top:2.25rem}
+.linea li::before{content:"";position:absolute;top:0;left:0;width:21px;height:21px;border-radius:50%;background:var(--papel);border:4px solid var(--pradera)}
+.linea li.ahora::before{background:var(--sol);border-color:var(--pradera-hondo)}
+.linea time{font-weight:700;color:var(--pradera)}
+.linea h3{margin:.25rem 0 .45rem}
+.linea p{color:var(--gris);margin:0;font-size:.98rem}
+@media (max-width:900px){.linea{grid-template-columns:1fr;gap:0;padding-left:1.75rem}.linea::before{left:9px;right:auto;top:0;bottom:0;width:3px;height:auto}.linea li{padding:0 0 1.75rem}.linea li::before{left:-1.75rem;top:.2rem}}
+
+/* ---------- qué hago si ---------- */
+.problemas{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+details{background:var(--blanco);border-radius:14px;border:1px solid var(--linea)}
+details[open]{border-color:var(--pradera)}
+summary{cursor:pointer;list-style:none;padding:1.1rem 1.3rem;min-height:56px;font:700 1.12rem var(--display);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--pradera);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+.det{padding:0 1.3rem 1.2rem;color:#36414E}
+.det ol{padding-left:1.2rem;margin:0 0 1rem}
+.det li{margin-bottom:.35rem}
+.det .ayuda{background:var(--pasto);border-radius:10px;padding:.8rem 1rem;font-size:.96rem;margin:0}
+@media (max-width:760px){.problemas{grid-template-columns:1fr}}
+
+/* ---------- seguridad (capítulo nocturno) ---------- */
+.seguridad{background:#14233B;color:#DCE4EE}
+.seguridad h2{color:#fff}
+.seguridad .cabeza p{color:#AFBDD0}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 2rem}
+.seg-grid b{display:block;font:800 2.4rem var(--display);color:var(--sol);line-height:1}
+.seg-grid h3{color:#fff;margin:.6rem 0 .4rem}
+.seg-grid p{color:#AFBDD0;margin:0}
+.dinero{margin-top:4rem;padding-top:3rem;border-top:1px solid #2A3E5E;display:grid;grid-template-columns:1fr 1.25fr;gap:3rem;align-items:center}
+.dinero h3{font-size:1.6rem;color:#fff;margin-bottom:.75rem}
+.barra-dinero{display:flex;height:56px;border-radius:10px;overflow:hidden;margin-bottom:1rem}
+.barra-dinero div{display:flex;align-items:center;padding:0 .9rem;font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden}
+.leyenda{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.leyenda li{display:grid;grid-template-columns:14px 1fr auto;gap:.75rem;align-items:center}
+.leyenda i{width:14px;height:14px;border-radius:4px}
+.leyenda b{font-family:var(--display);color:#fff}
+.leyenda .total{border-top:1px solid #2A3E5E;padding-top:.6rem;margin-top:.2rem}
+@media (max-width:860px){.seg-grid{grid-template-columns:1fr}.dinero{grid-template-columns:1fr}}
+
+/* ---------- sostener el barrio ---------- */
+.paquetes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:0 0 2.5rem}
+.paq{background:#fff;border:2px solid var(--tinta);border-radius:6px;padding:1.5rem;display:flex;flex-direction:column}
+.paq.dest{border-color:var(--pradera);box-shadow:6px 6px 0 var(--pradera)}
+.paq h3{margin:.1rem 0 .25rem}
+.paq .monto{font:800 2.2rem/1.1 var(--display);color:var(--pradera-hondo)}
+.paq .monto small{font:400 .95rem var(--texto);color:var(--gris)}
+.paq .iva{font-size:.88rem;color:var(--gris);margin:.15rem 0 1rem}
+.paq ul{margin:0 0 1.25rem;padding-left:1.1rem;color:var(--tinta);font-size:.98rem}
+.paq li{margin:.3rem 0}
+.paq a.btn-paq{margin-top:auto;display:inline-block;text-align:center;padding:.7rem 1rem;border-radius:6px;background:var(--pradera);color:#fff;font-weight:700;text-decoration:none}
+.paq a.btn-paq:focus-visible{outline:3px solid var(--sol);outline-offset:2px}
+.paq li.bono{list-style:none;margin-left:-1.1rem;padding:.5rem .65rem;background:var(--pasto);border-radius:6px;font-weight:700;color:var(--pradera-hondo)}
+.paq .ahorro{font-size:.9rem;font-weight:700;color:var(--pradera-hondo);margin:0 0 .75rem}
+.empieza{display:flex;gap:.75rem 1.25rem;flex-wrap:wrap;align-items:baseline;border-left:4px solid var(--pradera);padding:.4rem 0 .4rem 1rem;margin:0 0 1.5rem}
+.empieza b{font:800 1.15rem var(--display)}
+.garantia{border:2px dashed var(--pradera);border-radius:6px;padding:1rem 1.25rem;margin:0 0 2.5rem;background:#fff}
+.garantia b{font-family:var(--display)}
+.sueltos{margin:0 0 1rem;font:700 1.15rem var(--display)}
+@media (max-width:860px){.paquetes{grid-template-columns:1fr}}
+.servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--tinta)}
+.serv{padding:1.75rem 1.5rem 1.5rem 0;border-bottom:1px solid var(--linea);display:flex;flex-direction:column}
+.serv + .serv{padding-left:1.5rem;border-left:1px solid var(--linea)}
+.serv:nth-child(4){padding-left:0;border-left:0}
+.serv p{color:var(--gris);font-size:.98rem}
+.serv .precio{margin-top:auto;font:700 1.25rem var(--display)}
+.serv .precio small{display:block;font:400 .9rem var(--texto);color:var(--gris);margin-top:.15rem}
+.para-quien{font-size:.88rem;font-weight:700;color:var(--pradera);margin-bottom:.5rem}
+@media (max-width:860px){.servicios{grid-template-columns:1fr}.serv,.serv + .serv{padding:1.5rem 0;border-left:0}}
+
+/* ---------- tu barrio ---------- */
+.tubarrio{background:var(--papel);border-top:2px solid var(--tinta)}
+.tb-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.tb-lista{list-style:none;margin:1.25rem 0 0;padding:0}
+.tb-lista li{padding:.85rem 0;border-bottom:1px solid var(--linea)}
+.tb-lista b{display:block;font-family:var(--display)}
+.tb-lista span{color:var(--gris)}
+.tb-caja{background:#fff;border:2px solid var(--pradera);box-shadow:6px 6px 0 var(--pradera);border-radius:6px;padding:1.6rem}
+.tb-caja .monto{font:800 2.4rem/1.1 var(--display);color:var(--pradera-hondo)}
+.tb-caja .monto small{font:400 1rem var(--texto);color:var(--gris)}
+.tb-caja p{color:var(--gris);margin:.6rem 0 1.1rem}
+@media (max-width:860px){.tb-grid{grid-template-columns:1fr}}
+
+/* ---------- participa ---------- */
+.participa{background:var(--pasto)}
+.participa-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:3rem;align-items:start}
+.formas{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:1rem}
+.formas li{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:start}
+.formas svg{width:44px;height:44px}
+.formas b{font:700 1.1rem var(--display);display:block}
+.formas span{color:#3C4A43}
+form{background:var(--blanco);border-radius:18px;padding:1.75rem;display:grid;gap:1rem;box-shadow:0 18px 40px -28px rgba(31,74,48,.6)}
+form h3{font-size:1.4rem}
+label{display:grid;gap:.35rem;font-weight:700;font-size:.95rem}
+input,select,textarea{font:inherit;min-height:48px;padding:.7rem .9rem;border-radius:10px;border:1px solid #C4CCC1;background:var(--papel);color:var(--tinta)}
+textarea{min-height:96px;resize:vertical}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-nota{font-size:.88rem;color:var(--gris);margin:0}
+#wa-listo{display:none;font-weight:700;color:var(--pradera-hondo)}
+@media (max-width:860px){.participa-grid{grid-template-columns:1fr}.fila{grid-template-columns:1fr}}
+
+footer{background:var(--pradera-hondo);color:#BFD6C5;font-size:.93rem;padding:2.5rem 0}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer b{color:#fff;font-family:var(--display);font-size:1.05rem;display:block;margin-bottom:.4rem}
+footer a{color:#fff}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="La Pradera, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2F6B45"/><path d="M4 24 L12 12 L16 16 L20 9 L28 24Z" fill="#DCEBF5"/><path d="M4 25h24" stroke="#F2C14E" stroke-width="3" stroke-linecap="round"/></svg>
+      La Pradera
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#avisos">Avisos</a>
+      <a href="#barrio">El barrio</a>
+      <a href="#que-hago">¿Qué hago si…?</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#sostener">Servicios</a>
+      <a href="#tu-barrio">Tu barrio</a>
+    </nav>
+    <a class="btn btn-verde" href="#participa">Participa</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <div class="wrap hero-texto">
+    <h1>Somos La&nbsp;Pradera.</h1>
+    <div>
+      <p class="lead">Vecinos, negocios y Directiva de un barrio pequeño de Iñaquito, entre la Mariana de Jesús y la Mariano Aguilera. Nos organizamos para vivir más tranquilos, caminar mejor y conocernos.</p>
+      <div class="acciones">
+        <a class="btn btn-verde" href="#participa">Súmate al barrio</a>
+        <a class="btn btn-borde" href="#que-hago">Tengo un problema</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap escena-caja" id="escena-caja">
+    <button class="interruptor" id="interruptor" type="button" aria-pressed="false">
+      <span id="interruptor-txt">Ver el barrio de noche</span><span class="pista" aria-hidden="true"></span>
+    </button>
+    <svg class="escena" id="escena" viewBox="0 0 1200 460" role="img" aria-labelledby="esc-t esc-d">
+      <title id="esc-t">Ilustración del barrio La Pradera con el Pichincha al fondo</title>
+      <desc id="esc-d">Edificios, casas y árboles del barrio frente al volcán. De noche se ven las cámaras del barrio y el motorizado que ronda las calles.</desc>
+      <rect class="e-cielo" width="1200" height="460"/>
+      <g id="estrellas"></g>
+      <circle class="e-sol" cx="980" cy="90" r="38"/>
+      <!-- Pichincha: Rucu y Guagua -->
+      <path class="e-monte2" d="M0 250 L120 205 L260 150 L340 112 L395 128 L455 92 L520 120 L640 175 L820 215 L1000 236 L1200 228 V460 H0Z"/>
+      <path class="e-monte" d="M0 290 L180 248 L330 210 L470 196 L620 222 L800 250 L1000 262 L1200 255 V460 H0Z"/>
+      <g id="edificios"></g>
+      <g id="arboles"></g>
+      <rect class="e-calle" x="0" y="392" width="1200" height="68"/>
+      <g id="franjas"></g>
+      <g id="camaras"></g>
+      <circle class="e-moto" id="moto" cx="-20" cy="428" r="7"/>
+    </svg>
+    <p class="escena-nota">De 19:00 a 07:00 un motorizado ronda el barrio cada dos horas y 15 cámaras vigilan los ingresos.</p>
+  </div>
+</section>
+
+<div class="datos">
+  <div class="wrap">
+    <div><b class="num">46</b><span>predios en la lista del barrio</span></div>
+    <div><b class="num">4 calles</b><span>Mariana de Jesús, Mariano Aguilera, San Salvador, La Pradera</span></div>
+    <div><b class="num">1</b><span>Mesa de Seguridad con la Intendencia</span></div>
+    <div><b class="num">2023</b><span>Directiva registrada ante el Municipio</span></div>
+  </div>
+</div>
+
+<section id="avisos">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2>Cartelera del barrio</h2>
+      <p>Lo que pasa esta semana y lo que viene. Si tienes un aviso para los vecinos, mándalo y lo publicamos.</p>
+    </div>
+    <div class="cartelera">
+      <article class="aviso">
+        <div class="cuando">Esta semana</div>
+        <h3>Operativo de control en locales</h3>
+        <p>La Intendencia anunció un operativo con AMC, Policía y Comisaría en los locales que más problemas causan. Le enviamos la lista del barrio.</p>
+        <a href="#logros">Cómo llegamos aquí</a>
+      </article>
+      <article class="aviso">
+        <div class="cuando">Después de las elecciones</div>
+        <h3>Segunda Mesa de Seguridad</h3>
+        <p>Unos 15 días después de las elecciones. Vecinos, Ministerio de Gobierno y Policía. Avisaremos la fecha aquí y en el chat.</p>
+        <a href="#participa">Quiero asistir</a>
+      </article>
+      <article class="aviso">
+        <div class="cuando">Por agendar</div>
+        <h3>Charla gratis: sismos e inundaciones</h3>
+        <p>Un vecino ingeniero ambiental la ofrece para administradores y residentes de edificios. Planes de evacuación incluidos.</p>
+        <a href="#participa">Anotar mi edificio</a>
+      </article>
+      <article class="aviso">
+        <div class="cuando">Siempre</div>
+        <h3>Cuéntanos qué ves en la calle</h3>
+        <p>Foto, lugar y hora. Un problema reportado por muchos vecinos pesa más que diez reportes sueltos.</p>
+        <a href="#participa">Reportar algo</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="barrio" class="barrio">
+  <div class="wrap barrio-grid">
+    <div>
+      <h2>Un barrio para caminar</h2>
+      <p class="cabeza" style="margin:1rem 0 0;color:var(--gris);font-size:1.12rem">Edificios, casas, oficinas, restaurantes y escuelas en pocas cuadras, a pasos de la República y del parque La Carolina. Queremos que siga siendo un barrio seguro, con comercio vivo y veredas por donde se pueda caminar, no una zona de bares hasta la madrugada.</p>
+      <ul class="tipos" aria-label="Qué hay en el barrio">
+        <li>Edificios residenciales</li><li>Casas</li><li>Restaurantes y bares</li><li>Gimnasios</li><li>Hoteles</li><li>Educación</li><li>Oficinas</li>
+      </ul>
+      <a class="btn btn-borde" href="#participa">Poner mi negocio en el directorio</a>
+    </div>
+    <ul class="calles">
+      <li><b>Mariana de Jesús</b><span>La calle principal del barrio. Edificios, restaurantes y el hotel.</span></li>
+      <li><b>Mariano Aguilera</b><span>Residencial, con negocios de barrio: gimnasio, sastrería, cafés.</span></li>
+      <li><b>San Salvador</b><span>Casas y edificios residenciales, la parte más tranquila del barrio.</span></li>
+      <li><b>La Pradera</b><span>La calle que le da nombre al barrio.</span></li>
+      <li><b>Martín Carrión</b><span>La transversal. Su vereda está pedida a la EPMMOP para rehabilitación.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="logros">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2>Lo que hemos logrado juntos</h2>
+      <p>Cada gestión tiene número de trámite. Así sabemos a quién reclamar cuando no contestan.</p>
+    </div>
+    <ol class="linea">
+      <li>
+        <time datetime="2026-08">Agosto</time>
+        <h3>Exigimos cerrar el predio que se incendió</h3>
+        <p>Dos incendios en el terreno abandonado. Oficios a la AMC, Bomberos y la Zonal Eugenio Espejo.</p>
+      </li>
+      <li>
+        <time datetime="2026-09">Septiembre</time>
+        <h3>Contrato de seguridad negociado</h3>
+        <p>Rondas nocturnas completas, sin pagar por el vecino que no paga y sin penalidad si te mudas.</p>
+      </li>
+      <li>
+        <time datetime="2026-10">Octubre</time>
+        <h3>Denuncias por ruido y pirotecnia</h3>
+        <p>Cuatro trámites con número en la AMC y la Secretaría de Ambiente.</p>
+      </li>
+      <li class="ahora">
+        <time datetime="2026-11-09">9 de noviembre</time>
+        <h3>Primera Mesa de Seguridad</h3>
+        <p>Vecinos, Intendencia de Pichincha y Policía en la misma mesa. Sale un operativo.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="que-hago" style="background:var(--blanco)">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2>¿Qué hago si…?</h2>
+      <p>Pasos concretos para lo que más pasa en el barrio. Si prefieres no hacerlo tú, la Directiva lo hace por ti.</p>
+    </div>
+    <div class="problemas">
+      <details>
+        <summary>Hay una emergencia o un robo en curso</summary>
+        <div class="det">
+          <ol>
+            <li>Llama al <a href="tel:911"><b>911</b></a>. Da la calle y la esquina más cercana.</li>
+            <li>Avisa en el grupo de alertas del barrio para que revisen las cámaras de ese tramo.</li>
+            <li>No publiques videos en redes: la Policía los recibe por el ECU 911 o la UPC.</li>
+          </ol>
+          <p class="ayuda">Si eres parte de Pradera Segura, pedimos el video de las cámaras por ti.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Ruido o pirotecnia de un local o evento</summary>
+        <div class="det">
+          <ol>
+            <li>Graba un video corto con la hora visible.</li>
+            <li>Si es de noche y no para, llama al <a href="tel:911">911</a>.</li>
+            <li>Al día siguiente, denuncia en línea en la Agencia Metropolitana de Control (AMC): una denuncia por pirotecnia y otra por ruido.</li>
+          </ol>
+          <p class="ayuda">Límite en el barrio: 55 dB de día y 45 dB de noche. La pirotecnia de alto impacto está prohibida en Quito desde mayo de 2026.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Una alarma suena y nadie la apaga</summary>
+        <div class="det">
+          <ol>
+            <li>Anota la dirección y la hora de inicio, y graba 30 segundos.</li>
+            <li>Si suena mucho rato de noche, llama al <a href="tel:911">911</a>.</li>
+            <li>Si se repite, es una denuncia por ruido ante la AMC.</li>
+          </ol>
+          <p class="ayuda">Si la alarma es tuya, se puede conectar a la central de monitoreo del barrio con descuento.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Un terreno abandonado, con maleza o que se incendia</summary>
+        <div class="det">
+          <ol>
+            <li>En incendio, <a href="tel:911">911</a> primero.</li>
+            <li>Fotografía el cerramiento y la maleza seca.</li>
+            <li>Denuncia ante la AMC por falta de cerramiento y saneamiento: es la única que sanciona al propietario.</li>
+          </ol>
+          <p class="ayuda">Ya llevamos este caso con el predio 132719, que se incendió dos veces en agosto.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Una vereda rota o intransitable</summary>
+        <div class="det">
+          <ol>
+            <li>Foto con una referencia (una persona, un auto) para que se vea el ancho.</li>
+            <li>Repórtala a la EPMMOP al <a href="tel:1800510510">1800 510 510</a>, opción 3.</li>
+            <li>Guarda el número de trámite que te den.</li>
+          </ol>
+          <p class="ayuda">La vereda de la Martín Carrión ya está pedida a la EPMMOP desde septiembre.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Basura acumulada o alcantarilla tapada</summary>
+        <div class="det">
+          <ol>
+            <li>Foto con la dirección exacta.</li>
+            <li>Mándanosla y la sumamos al próximo reporte del barrio a la Administración Zonal.</li>
+          </ol>
+          <p class="ayuda">Las inundaciones de subsuelos y ascensores empiezan por alcantarillas tapadas.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="seguridad" class="seguridad">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2>Pradera Segura: la seguridad que pagamos entre todos</h2>
+      <p>Un sistema para todo el barrio, no una cámara para cada casa. Cada vecino o negocio firma su propio contrato y responde solo por su cuota.</p>
+    </div>
+    <div class="seg-grid">
+      <div><b class="num">15</b><h3>Cámaras en los ingresos</h3><p>Con detección de movimiento y disuasión, vigiladas las 24 horas desde una central de monitoreo.</p></div>
+      <div><b class="num">19 → 07</b><h3>Motorizado toda la noche</h3><p>Seis rondas de 20 minutos, una cada dos horas, incluida la del amanecer.</p></div>
+      <div><b class="num">10</b><h3>Altavoces con sirena</h3><p>Un aviso de voz grabado que espanta antes de que algo pase.</p></div>
+      <div><b class="num">911</b><h3>Coordinación con la Policía</h3><p>La central coordina con el ECU 911 y despacha supervisión incluso fuera del horario de rondas.</p></div>
+      <div><b class="num">16 h</b><h3>Guardianía para eventos</h3><p>Horas de guardia presencial al mes que el barrio reparte entre sus adherentes.</p></div>
+      <div><b class="num">0 %</b><h3>Penalidad si te mudas</h3><p>Si vendes o te cambias de casa, cedes el contrato sin multa.</p></div>
+    </div>
+
+    <div class="dinero" id="dinero">
+      <div>
+        <h3>A dónde va cada dólar</h3>
+        <p style="color:#AFBDD0;margin:0">El costo para todo el barrio es fijo por 24 meses, sin importar cuántos predios se sumen. Cada vecino nuevo baja lo que pagan los demás o fortalece el fondo del barrio.</p>
+      </div>
+      <div>
+        <div class="barra-dinero" role="img" aria-label="Costo mensual del barrio: 450 dólares el motorizado, 1.747 las cámaras y el monitoreo, 329,55 de IVA">
+          <div style="flex:450;background:#F2C14E;color:#1B2430">Motorizado</div>
+          <div style="flex:1747;background:#4A6FA5;color:#fff">Cámaras y monitoreo</div>
+          <div style="flex:330;background:#6B7A8F;color:#fff">IVA</div>
+        </div>
+        <ul class="leyenda">
+          <li><i style="background:#F2C14E"></i><span>Vigilancia móvil nocturna</span><b>$450,00</b></li>
+          <li><i style="background:#4A6FA5"></i><span>Cámaras, equipos y monitoreo 24/7</span><b>$1.747,00</b></li>
+          <li><i style="background:#6B7A8F"></i><span>IVA 15%</span><b>$329,55</b></li>
+          <li class="total"><i></i><span>Total al mes para todo el barrio</span><b>$2.526,55</b></li>
+        </ul>
+        <p style="color:#AFBDD0;font-size:.93rem;margin:1rem 0 0">Lo que se recauda por encima de ese total va a un administrador del barrio y a un fondo de reserva que cubre atrasos sin cortarle el servicio a nadie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sostener">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2>Servicios que sostienen el barrio</h2>
+      <p>Cada uno ayuda a pagar la seguridad y al administrador del barrio. Los adherentes de Pradera Segura tienen descuento o acceso exclusivo. <b>Todos los precios incluyen IVA.</b></p>
+    </div>
+    <div class="empieza"><b>Empieza gratis:</b><span>la cartelera, la gu&iacute;a &ldquo;&iquest;Qu&eacute; hago si&hellip;?&rdquo;, el chat del barrio y la charla de riesgos. Nadie te obliga a pagar.</span></div>
+    <div class="paquetes">
+      <article class="paq">
+        <div class="para-quien">Vecinos</div>
+        <h3>Vecino Seguro</h3>
+        <div class="monto" data-paq="vecino"></div>
+        <div class="iva">IVA incluido</div>
+        <ul>
+          <li>Tu predio en Pradera Segura: rondas nocturnas y c&aacute;maras del barrio</li>
+          <li>Video de un incidente por la v&iacute;a legal</li>
+          <li>Tr&aacute;mites y denuncias a precio de adherente</li>
+          <li>Monitoreo de tu alarma con 25% de descuento</li>
+          <li class="bono">Bono: 1 tr&aacute;mite o denuncia gratis al a&ntilde;o (vale $15)</li>
+        </ul>
+        <a class="btn-paq" href="#participa">Quiero este paquete</a>
+      </article>
+      <article class="paq dest">
+        <div class="para-quien">Negocios</div>
+        <h3>Negocio Visible</h3>
+        <div class="monto" data-paq="negocio"></div>
+        <div class="iva">IVA incluido &middot; primer mes gratis</div><div class="ahorro">Suelto cuesta $31 al mes: ahorras $4 cada mes</div>
+        <ul>
+          <li>Todo el Paquete Vecino</li>
+          <li>Ficha en el directorio del barrio</li>
+          <li>Aparici&oacute;n en la revista mensual y en los videos del barrio</li>
+          <li class="bono">Bono: 2 tr&aacute;mites gratis al a&ntilde;o (valen $30)</li>
+        </ul>
+        <a class="btn-paq" href="#participa">Quiero este paquete</a>
+      </article>
+      <article class="paq">
+        <div class="para-quien">Edificios</div>
+        <h3>Edificio Protegido</h3>
+        <div class="monto" data-paq="edificio"></div>
+        <div class="iva">IVA incluido &middot; un solo cupo para todo el edificio</div>
+        <ul>
+          <li>Cobertura de Pradera Segura para todo el edificio</li>
+          <li>Charla de gesti&oacute;n de riesgos gratis para residentes</li>
+          <li>Video de incidentes y monitoreo de alarma con descuento</li>
+          <li class="bono">Bono: 3 tr&aacute;mites gratis al a&ntilde;o (valen $45)</li>
+        </ul>
+        <a class="btn-paq" href="#participa">Quiero este paquete</a>
+      </article>
+    </div>
+    <div class="garantia"><b>Garant&iacute;a del tr&aacute;mite:</b> si en 5 d&iacute;as h&aacute;biles no tienes el n&uacute;mero de ingreso de tu denuncia o tr&aacute;mite, ese tr&aacute;mite no te cuesta. Probar es gratis: tu primer mes de Negocio Visible va por cuenta de la Directiva.</div>
+    <p class="sueltos">Servicios sueltos</p>
+    <div class="servicios">
+      <article class="serv">
+        <div class="para-quien">Vecinos y negocios</div>
+        <h3>Sumarte a Pradera Segura</h3>
+        <p>Cobro mensual por débito bancario o tarjeta. Te mandamos el contrato y el formulario de cobro. Elige el paquete que te corresponde.</p>
+        <div class="precio">Incluida en cada paquete<small>Más predios, menos paga cada uno</small></div>
+      </article>
+      <article class="serv">
+        <div class="para-quien">Vecinos y negocios</div>
+        <h3>Denuncias y trámites por ti</h3>
+        <p>Redactamos el oficio, lo ingresamos a la entidad correcta y lo seguimos hasta tener número de expediente y respuesta.</p>
+        <div class="precio" data-precio="tramite"></div>
+      </article>
+      <article class="serv">
+        <div class="para-quien">Solo adherentes</div>
+        <h3>Monitoreo de tu alarma</h3>
+        <p>Conectamos tu alarma o botón de pánico a la central del barrio. Deja de sonar al vacío.</p>
+        <div class="precio">25% de descuento<small>sobre la tarifa normal de la central, IVA incluido</small></div>
+      </article>
+      <article class="serv">
+        <div class="para-quien">Negocios</div>
+        <h3>Tu negocio en el directorio</h3>
+        <p>Ficha en el directorio del barrio, aparición en la revista mensual y en los videos del barrio en redes.</p>
+        <div class="precio" data-precio="vitrina"></div>
+      </article>
+      <article class="serv">
+        <div class="para-quien">Solo adherentes</div>
+        <h3>Video de un incidente</h3>
+        <p>Si pasó algo frente a tu casa o local, gestionamos la entrega del video por la vía legal (ECU 911 o UPC).</p>
+        <div class="precio">Incluido<small>en tu cuota de Pradera Segura</small></div>
+      </article>
+      <article class="serv">
+        <div class="para-quien">Edificios</div>
+        <h3>Charla de gestión de riesgos</h3>
+        <p>Sismos, inundaciones y planes de evacuación para administradores y residentes.</p>
+        <div class="precio">Gratis<small>la ofrece un vecino del barrio</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="tu-barrio" class="tubarrio">
+  <div class="wrap tb-grid">
+    <div>
+      <h2>&iquest;Tu barrio tambi&eacute;n?</h2>
+      <p style="font-size:1.15rem;margin:1rem 0 0;max-width:48ch">Lo que hicimos en La Pradera se puede repetir. Un administrador compartido y un asistente de WhatsApp ordenan un barrio sin que cada uno tenga que pagar un equipo propio.</p>
+      <ul class="tb-lista">
+        <li><b>Asistente del chat del barrio</b><span>Responde &ldquo;&iquest;qu&eacute; hago si&hellip;?&rdquo; con la gu&iacute;a correcta y publica los avisos. Funciona de d&iacute;a y de noche.</span></li>
+        <li><b>Administrador compartido</b><span>Una persona redacta y sigue las denuncias y tr&aacute;mites de varios barrios hasta tener n&uacute;mero de ingreso y respuesta.</span></li>
+        <li><b>Un sitio como este</b><span>Cartelera, gu&iacute;a, directorio de negocios y formulario. Sin costo de mantenimiento para el barrio.</span></li>
+        <li><b>Acompa&ntilde;amiento para su seguridad</b><span>Te contamos c&oacute;mo armamos la Mesa de Seguridad y el esquema de c&aacute;maras y rondas, para que lo adaptes.</span></li>
+      </ul>
+    </div>
+    <aside class="tb-caja" aria-label="Precio para otros barrios">
+      <div class="para-quien">Para directivas y comit&eacute;s de barrio</div>
+      <div class="monto" data-franq="valor"></div>
+      <p data-franq="nota"></p>
+      <a class="btn btn-verde" href="https://wa.me/593981872561?text=Hola%2C%20soy%20de%20un%20barrio%20y%20quiero%20esto%20para%20mi%20barrio.%20Barrio%3A%20____%20.%20Predios%20aproximados%3A%20____%20." rel="noopener">Escr&iacute;benos por WhatsApp</a>
+      <p style="font-size:.9rem;margin:.9rem 0 0">Respondemos en el mismo d&iacute;a h&aacute;bil. No hace falta decidir nada hoy.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="participa" class="participa">
+  <div class="wrap participa-grid">
+    <div>
+      <h2>Participa</h2>
+      <p style="font-size:1.15rem;margin:1rem 0 0;max-width:46ch">No hace falta ser de la Directiva. Basta con ser vecino o tener un negocio aquí.</p>
+      <ul class="formas">
+        <li><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#2F6B45"/><path d="M13 16h18v11H20l-5 4v-4h-2z" fill="#fff"/></svg><div><b>Entra al chat del barrio</b><span>Avisos, alertas y novedades en tu WhatsApp.</span></div></li>
+        <li><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#2F6B45"/><circle cx="17" cy="19" r="4" fill="#fff"/><circle cx="27" cy="19" r="4" fill="#fff"/><path d="M10 31c1-5 13-5 14 0M20 31c1-5 13-5 14 0" stroke="#fff" stroke-width="2.5" fill="none"/></svg><div><b>Ven a la próxima Mesa</b><span>La voz de los vecinos se escucha mejor en persona.</span></div></li>
+        <li><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#2F6B45"/><path d="M22 11l9 4v7c0 6-4 9-9 11-5-2-9-5-9-11v-7z" fill="#fff"/></svg><div><b>Suma tu predio a Pradera Segura</b><span>Con cada predio nuevo baja la cuota de todos.</span></div></li>
+        <li><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#2F6B45"/><rect x="13" y="14" width="18" height="14" rx="2" fill="#fff"/><circle cx="22" cy="21" r="4" fill="#2F6B45"/></svg><div><b>Manda una foto de un problema</b><span>Lugar y hora. Lo sumamos al siguiente reporte.</span></div></li>
+      </ul>
+    </div>
+    <form id="form" novalidate>
+      <h3>Escríbenos</h3>
+      <label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+      <div class="fila">
+        <label>Soy
+          <select name="tipo"><option>Vecino de edificio</option><option>Vecino de casa</option><option>Negocio</option><option>Administrador de edificio</option></select>
+        </label>
+        <label>Calle<input name="calle" placeholder="Ej. San Salvador"></label>
+      </div>
+      <label>Quiero
+        <select name="servicio">
+          <option>Entrar al chat del barrio</option>
+          <option>Ir a la próxima Mesa de Seguridad</option>
+          <option>Sumar mi predio a Pradera Segura</option>
+          <option>Que la Directiva ponga una denuncia por mí</option>
+          <option>Poner mi negocio en el directorio</option>
+          <option>Anotar mi edificio a la charla de riesgos</option>
+          <option>Publicar un aviso en la cartelera</option>
+        </select>
+      </label>
+      <label>Mensaje (opcional)<textarea name="detalle"></textarea></label>
+      <button class="btn btn-verde" type="submit">Enviar por WhatsApp</button>
+      <a id="wa-listo" href="#">Abrir WhatsApp con tu mensaje listo</a>
+      <p class="form-nota">Se abre WhatsApp con tu mensaje escrito. Esta página no guarda tus datos.</p>
+    </form>
+    <form id="form-correo" novalidate style="margin-top:1.5rem">
+      <h3>Preguntas, ideas y comunicaciones</h3>
+      <p style="margin:0;color:var(--gris)">&iquest;Tienes una pregunta, una idea para el barrio o algo que comunicar? Escr&iacute;benos al correo de La Pradera.</p>
+      <label>Es una
+        <select name="tipo">
+          <option>Pregunta</option>
+          <option>Idea para el barrio</option>
+          <option>Comunicaci&oacute;n o aviso</option>
+          <option>Problema que quiero reportar</option>
+          <option>Quiero esto para mi barrio</option>
+        </select>
+      </label>
+      <label>Tu nombre (opcional)<input name="nombre" autocomplete="name"></label>
+      <label>Tu mensaje<textarea name="mensaje" required></textarea></label>
+      <button class="btn btn-verde" type="submit">Escribir al correo</button>
+      <a id="correo-listo" href="#" style="display:none">Abrir el correo con tu mensaje listo</a>
+      <p class="form-nota">Se abre tu correo con el mensaje escrito, dirigido a <a href="mailto:lapraderaquito@gmail.com">lapraderaquito@gmail.com</a>. Esta p&aacute;gina no guarda tus datos.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b>Comité Pro Mejoras del Barrio La Pradera</b>
+      Av. Mariana de Jesús E7-21, Quito 170518<br>Parroquia Iñaquito, Administración Zonal Eugenio Espejo
+    </div>
+    <div>
+      <b>Contacto</b>
+      WhatsApp <a href="https://wa.me/593981872561">098 187 2561</a><br>
+      <a href="mailto:lapraderaquito@gmail.com">lapraderaquito@gmail.com</a>
+    </div>
+    <div>
+      <b>Síguenos</b>
+      <a href="https://x.com/LaPraderaQuito">X @LaPraderaQuito</a><br>
+      <a href="https://lapraderaquito.blogspot.com">Blog del barrio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Precios en un solo lugar. Deja valor en "" para mostrar "Consúltanos". */
+const PRECIOS = {
+  tramite: { valor: "$15 por caso", nota: "IVA incluido · $8 si eres adherente" },
+  vitrina: { valor: "$12 al mes",  nota: "IVA incluido · Primer mes gratis · incluida en el Paquete Negocio" }
+};
+/* Paquetes (precio mensual con IVA incluido). */
+const PAQUETES = { vecino: "$19", negocio: "$27", edificio: "$130" };
+document.querySelectorAll("[data-paq]").forEach(el=>{
+  el.innerHTML = (PAQUETES[el.dataset.paq] || "Consúltanos") + " <small>al mes</small>";
+});
+document.querySelectorAll("[data-precio]").forEach(el=>{
+  const p = PRECIOS[el.dataset.precio] || {};
+  el.innerHTML = (p.valor || "Consúltanos") + (p.nota ? "<small>"+p.nota+"</small>" : "");
+});
+
+/* Formulario → correo de La Pradera (mailto). No guarda datos. */
+const formC = document.getElementById("form-correo"), correoListo = document.getElementById("correo-listo");
+formC.addEventListener("submit", e=>{
+  e.preventDefault();
+  const f = new FormData(formC);
+  const msg = (f.get("mensaje")||"").trim();
+  if(!msg){ formC.elements.mensaje.focus(); return; }
+  const asunto = "[La Pradera] " + f.get("tipo");
+  const cuerpo = msg + (f.get("nombre") ? "\n\n— " + f.get("nombre").trim() : "");
+  const url = "mailto:lapraderaquito@gmail.com?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo);
+  correoListo.href = url; correoListo.style.display = "inline-block";
+  window.location.href = url;
+});
+
+/* Oferta para otros barrios (precio mensual con IVA incluido). */
+const FRANQUICIA = { valor: "$79", periodo: "al mes por barrio", nota: "IVA incluido. Primer mes gratis y sin costo de instalaci\u00f3n. Barrios de hasta 100 predios. Cancelas cuando quieras." };
+document.querySelectorAll("[data-franq]").forEach(el=>{
+  el.innerHTML = el.dataset.franq==="valor" ? FRANQUICIA.valor+" <small>"+FRANQUICIA.periodo+"</small>" : FRANQUICIA.nota;
+});
+
+/* Formulario → WhatsApp. No guarda datos. */
+const form = document.getElementById("form"), listo = document.getElementById("wa-listo");
+form.addEventListener("submit", e=>{
+  e.preventDefault();
+  const f = new FormData(form);
+  if(!String(f.get("nombre")).trim()){ form.nombre.setCustomValidity("Escribe tu nombre para poder responderte."); form.nombre.reportValidity(); return; }
+  const txt = `Hola, soy ${f.get("nombre")} (${f.get("tipo")}${f.get("calle") ? ", calle "+f.get("calle") : ""}). Quiero: ${f.get("servicio")}.${f.get("detalle") ? " "+f.get("detalle") : ""}`;
+  const url = "https://wa.me/593981872561?text=" + encodeURIComponent(txt);
+  listo.href = url; listo.style.display = "block";
+  let w = null; try { w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_) {}
+  if (!w) listo.focus();
+});
+form.nombre.addEventListener("input", e=>e.target.setCustomValidity(""));
+
+/* Escena: se dibuja una vez; el interruptor cambia día/noche. */
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); parent.appendChild(n); return n; };
+let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+
+const edif = document.getElementById("edificios");
+const bloques = [
+  [20,120,190,1],[150,80,150,2],[240,140,260,3],[390,90,120,1],[490,130,220,2],
+  [630,100,170,3],[740,150,280,1],[900,90,140,2],[1000,120,200,3],[1130,90,160,1]
+];
+bloques.forEach(([x,w,h,t])=>{
+  const y = 392 - h;
+  el("rect",{x,y,width:w,height:h,class:"e-edif"+t},edif);
+  const cols = Math.max(2, Math.floor(w/26)), filas = Math.floor((h-24)/30);
+  for (let c=0;c<cols;c++) for (let r=0;r<filas;r++){
+    if (rnd() < .18) continue;
+    const vx = x + 10 + c*((w-20)/cols), vy = y + 14 + r*30;
+    const v = el("rect",{x:vx,y:vy,width:(w-20)/cols-8,height:16,rx:2,class:"e-vent"},edif);
+    if (rnd() < .45) v.style.opacity = ".55";
+  }
+});
+const arb = document.getElementById("arboles");
+[100,215,370,470,610,715,880,975,1110].forEach((x,i)=>{
+  el("rect",{x:x-4,y:360,width:8,height:32,class:"e-tronco"},arb);
+  el("circle",{cx:x,cy:350,r:22+(i%3)*4,class:i%2?"e-copa":"e-copa2"},arb);
+});
+const fr = document.getElementById("franjas");
+for (let x=10;x<1200;x+=80) el("rect",{x,y:424,width:44,height:5,rx:2,class:"e-franja"},fr);
+const cams = document.getElementById("camaras");
+[60,330,600,860,1150].forEach(x=>{
+  el("rect",{x:x-2,y:330,width:4,height:62,class:"e-poste"},cams);
+  el("path",{d:`M${x} 334 L${x-60} 392 L${x+60} 392Z`,class:"e-haz"},cams);
+  el("circle",{cx:x,cy:332,r:6,class:"e-cam"},cams);
+});
+const est = document.getElementById("estrellas");
+for (let i=0;i<40;i++) el("circle",{cx:rnd()*1200,cy:rnd()*170,r:rnd()*1.4+.4,class:"e-estrella"},est);
+
+const escena = document.getElementById("escena"), caja = document.getElementById("escena-caja");
+const btn = document.getElementById("interruptor"), btnTxt = document.getElementById("interruptor-txt");
+const sol = escena.querySelector(".e-sol"), moto = document.getElementById("moto");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let raf = null, t0 = null;
+function ronda(ts){
+  if (t0 === null) t0 = ts;
+  const k = ((ts - t0) % 7000) / 7000;
+  moto.setAttribute("cx", -20 + k*1240);
+  raf = requestAnimationFrame(ronda);
+}
+btn.addEventListener("click", ()=>{
+  const noche = btn.getAttribute("aria-pressed") !== "true";
+  btn.setAttribute("aria-pressed", noche);
+  escena.classList.toggle("noche", noche);
+  caja.classList.toggle("noche-activa", noche);
+  btnTxt.textContent = noche ? "Ver el barrio de día" : "Ver el barrio de noche";
+  sol.setAttribute("cx", noche ? 210 : 980); sol.setAttribute("r", noche ? 26 : 38);
+  if (noche && !reduce){ t0 = null; raf = requestAnimationFrame(ronda); }
+  else { cancelAnimationFrame(raf); moto.setAttribute("cx", noche ? 600 : -20); }
+});
+</script>
+</body>
+</html>
