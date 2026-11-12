@@ -239,6 +239,14 @@ textarea{min-height:96px;resize:vertical}
 .sueltos-det{margin-top:.5rem}.sueltos-det .servicios{margin:0 1.3rem 1.3rem}
 @media (max-width:860px){.participa-grid{grid-template-columns:1fr}.fila{grid-template-columns:1fr}}
 
+.auspicio{padding:2.25rem 0;background:#fff;border-top:1px solid var(--linea)}
+.auspicio-in{display:grid;grid-template-columns:48px 1fr auto;gap:1.25rem;align-items:center}
+.auspicio-in svg{width:48px;height:48px}
+.auspicio-in b{display:block;font:800 1.25rem var(--display)}
+.auspicio-in span{color:var(--gris)}
+.auspicio .para-quien{margin-bottom:.15rem}
+@media (max-width:640px){.auspicio-in{grid-template-columns:48px 1fr}.auspicio-in .btn{grid-column:1/-1}}
+
 footer{background:var(--pradera-hondo);color:#BFD6C5;font-size:.93rem;padding:2.5rem 0}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
 footer b{color:#fff;font-family:var(--display);font-size:1.05rem;display:block;margin-bottom:.4rem}
@@ -663,6 +671,18 @@ footer a{color:#fff}
   </div>
 </section>
 
+<section class="auspicio" aria-label="Auspiciante">
+  <div class="wrap auspicio-in">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#1F4A30"/><rect x="19" y="10" width="10" height="18" rx="5" fill="#F2C14E"/><path d="M14 23a10 10 0 0 0 20 0M24 33v6M18 39h12" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+    <div>
+      <div class="para-quien">Auspicia este sitio</div>
+      <b>Estudio de Podcast La Pradera</b>
+      <span>Graba tu podcast o entrevista aqu&iacute; mismo en el barrio: sala sola o con producci&oacute;n editada.</span>
+    </div>
+    <a class="btn btn-borde" id="auspicio-link" href="#" rel="noopener">Ver tarifas</a>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -679,7 +699,8 @@ footer a{color:#fff}
     <div>
       <b>Síguenos</b>
       <a href="https://x.com/LaPraderaQuito">X @LaPraderaQuito</a><br>
-      <a href="https://lapraderaquito.blogspot.com">Blog del barrio</a>
+      <a href="https://lapraderaquito.blogspot.com">Blog del barrio</a><br>
+      Auspicia: <a class="auspicio-pie" href="#">Estudio de Podcast La Pradera</a>
     </div>
   </div>
 </footer>
@@ -699,6 +720,10 @@ document.querySelectorAll("[data-precio]").forEach(el=>{
   const p = PRECIOS[el.dataset.precio] || {};
   el.innerHTML = (p.valor || "Consúltanos") + (p.nota ? "<small>"+p.nota+"</small>" : "");
 });
+
+/* Auspiciante: cambiar url cuando estudiopodcastquito.com esté activo. */
+const AUSPICIANTE = { url: "mailto:info@neytorres.com?subject=" + encodeURIComponent("Tarifas del estudio de podcast") };
+document.querySelectorAll("#auspicio-link,.auspicio-pie").forEach(a=>a.href=AUSPICIANTE.url);
 
 /* Oferta para otros barrios (precio mensual con IVA incluido). */
 const FRANQUICIA = { valor: "$79", periodo: "al mes por barrio", nota: "IVA incluido. Primer mes gratis y sin costo de instalaci\u00f3n. Barrios de hasta 100 predios. Cancelas cuando quieras." };
