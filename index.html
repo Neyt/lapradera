@@ -184,6 +184,11 @@ details[open] summary::after{transform:rotate(45deg)}
 .paq .iva{font-size:.88rem;color:var(--gris);margin:.15rem 0 1rem}
 .paq ul{margin:0 0 1.25rem;padding-left:1.1rem;color:var(--tinta);font-size:.98rem}
 .paq li{margin:.3rem 0}
+.paq-barrio{background:#fff;border:2px dashed var(--pradera);border-radius:6px;padding:1.5rem;margin:0 0 2.5rem;display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem;align-items:center}
+.paq-barrio h3{margin:.1rem 0 .4rem}
+.paq-barrio p{margin:.3rem 0}
+.paq-barrio a.btn-paq{display:inline-block;text-align:center;padding:.8rem 1.2rem;border-radius:6px;background:var(--pradera);color:#fff;font-weight:700;text-decoration:none}
+@media (max-width:720px){.paq-barrio{grid-template-columns:1fr}}
 .paq a.btn-paq{margin-top:auto;display:inline-block;text-align:center;padding:.7rem 1rem;border-radius:6px;background:var(--pradera);color:#fff;font-weight:700;text-decoration:none}
 .paq a.btn-paq:focus-visible{outline:3px solid var(--sol);outline-offset:2px}
 .paq li.bono{list-style:none;margin-left:-1.1rem;padding:.5rem .65rem;background:var(--pasto);border-radius:6px;font-weight:700;color:var(--pradera-hondo)}
@@ -565,6 +570,18 @@ footer a{color:#fff}
         <a class="btn-paq" href="#participa">Quiero este paquete</a>
       </article>
     </div>
+    <div class="paq-barrio" id="barrio-aliado">
+      <div>
+        <div class="para-quien">Dirigentes de otros barrios</div>
+        <h3>Barrio Aliado</h3>
+        <p>&iquest;Diriges un barrio, una directiva o un comit&eacute;? Escr&iacute;benos directo al correo. Mientras m&aacute;s barrios compartimos administrador, asistente de WhatsApp, sitio y contrato de seguridad, menos paga cada uno y m&aacute;s beneficios consigue todo el grupo.</p>
+        <p style="font-size:.93rem;color:var(--gris)">Sin compromiso. Te respondemos por correo con el plan para tu barrio.</p>
+      </div>
+      <div style="text-align:center">
+        <a class="btn-paq" href="mailto:lapraderaquito@gmail.com?subject=Soy%20dirigente%20de%20otro%20barrio&body=Hola%2C%20soy%20dirigente%20de%20un%20barrio%20y%20quiero%20sumarme.%0ABarrio%3A%20%0APredios%20aproximados%3A%20%0AMi%20nombre%20y%20cargo%3A%20%0ACelular%3A%20">Escribir a la Directiva</a>
+        <p style="font-size:.88rem;margin-top:.6rem"><a href="mailto:lapraderaquito@gmail.com">lapraderaquito@gmail.com</a></p>
+      </div>
+    </div>
     <div class="garantia"><b>Garant&iacute;a del tr&aacute;mite:</b> si en 5 d&iacute;as h&aacute;biles no tienes el n&uacute;mero de ingreso de tu denuncia o tr&aacute;mite, ese tr&aacute;mite no te cuesta. Probar es gratis: tu primer mes de Negocio Visible va por cuenta de la Directiva.</div>
     <details class="sueltos-det">
       <summary>Servicios sueltos, sin paquete</summary>
@@ -572,7 +589,8 @@ footer a{color:#fff}
       <article class="serv">
         <div class="para-quien">Vecinos y negocios</div>
         <h3>Sumarte a Pradera Segura</h3>
-        <p>Cobro mensual por débito bancario o tarjeta. Te mandamos el contrato y el formulario de cobro. Elige el paquete que te corresponde.</p>
+        <p>Cobro mensual por débito bancario o tarjeta. Te mandamos el formulario de cobro. Elige el paquete que te corresponde.</p>
+        <p><a href="https://claude.ai/artifact/83Qox3HLdsyxWKvpMMVYqn#firmar" rel="noopener"><b>Ver y bajar el contrato</b></a>. Imprime 2 ejemplares, fírmalos y entrégalos a Camilo Mideros, Presidente de la Directiva, en su peluquería.</p>
         <div class="precio">Incluida en cada paquete<small>Más predios, menos paga cada uno</small></div>
       </article>
       <article class="serv">
@@ -627,6 +645,7 @@ footer a{color:#fff}
       <div class="monto" data-franq="valor"></div>
       <p data-franq="nota"></p>
       <a class="btn btn-verde" href="https://wa.me/593981872561?text=Hola%2C%20soy%20de%20un%20barrio%20y%20quiero%20esto%20para%20mi%20barrio.%20Barrio%3A%20____%20.%20Predios%20aproximados%3A%20____%20." rel="noopener">Escr&iacute;benos por WhatsApp</a>
+      <a class="btn btn-verde" style="margin-top:.6rem" href="mailto:lapraderaquito@gmail.com?subject=Soy%20dirigente%20de%20otro%20barrio">O escr&iacute;benos por correo</a>
       <p style="font-size:.9rem;margin:.9rem 0 0">Respondemos en el mismo d&iacute;a h&aacute;bil. No hace falta decidir nada hoy.</p>
     </aside>
   </div>
